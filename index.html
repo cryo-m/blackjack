@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота 9</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Блекджек</h1>
+        <div class="balance-display">Баланс: $<span id="balance">1000</span></div>
+    </header>
+
+    <main id="betting-screen" class="screen">
+        <div class="bet-container">
+            <h2>Зробіть ставку</h2>
+            <input type="number" id="bet-amount" value="100" min="1" max="1000">
+            <button onclick="startGame()">Зробити ставку</button>
+        </div>
+    </main>
+
+    <main id="game-screen" class="screen hidden">
+        <div class="game-area">
+            <div class="side dealer-side">
+                <h2>Дилер</h2>
+                <div class="score-badge" id="dealer-score">0</div>
+                <div class="cards" id="dealer-cards"></div>
+            </div>
+
+            <div class="side player-side">
+                <h2 id="player-name">Гравець</h2>
+                <div class="score-badge" id="player-score">0</div>
+                <div class="cards" id="player-cards"></div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="hit-btn" onclick="hit()">Взяти карту</button>
+            <button id="stand-btn" onclick="stand()">Залишити</button>
+        </div>
+
+        <div id="result-screen" class="screen hidden">
+            <h1 id="result-message"></h1>
+            <button onclick="restartGame()">Грати ще</button>
+        </div>
+    </main>
+
+    
+</body>
+</html>
